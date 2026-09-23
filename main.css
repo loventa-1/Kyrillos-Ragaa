@@ -9,7 +9,7 @@
   --gold: #c9a84c;
   --gold-light: #e8d08a;
   --gold-pale: #f5e9c0;
-  --gold-dark: #8b6914;
+  --gold-dark: #685c38;
   --cream: #fdf6e3;
   --dark: #0d0a06;
   --text-dark: #2a1f0a;
@@ -335,14 +335,19 @@ html[lang="en"] .en-text {
 
 .door-top-text {
   position: absolute;
-  top: 5%;
+  top: 4%;
   left: 0;
   right: 0;
   margin: 0 auto;
   text-align: center;
   z-index: 5;
   animation: fadeUp 1.5s ease 0.3s both;
-  width: 90%;
+  width: 92%;
+  max-width: 680px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
 }
 
 @keyframes fadeUp {
@@ -356,33 +361,95 @@ html[lang="en"] .en-text {
   }
 }
 
+/* السطر التمهيدي (Together with their families) */
 .door-pre {
   font-family: var(--font-italic);
   font-style: italic;
-  color: var(--gold-pale);
+  color: var(--gold-dark);           /* ← كان gold-pale */
   font-size: clamp(13px, 3.5vw, 18px);
   letter-spacing: 0.18em;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.9);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);   /* ظل أقوى شوية */
+  margin: 0;
+  line-height: 1.4;
 }
 
+/* أسماء العائلات */
+.door-families {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-family: var(--font-display);
+  font-size: clamp(15px, 4vw, 22px);
+  letter-spacing: 0.08em;
+  color: var(--gold-dark);           /* ← كان gold-light */
+  text-shadow:
+    0 0 10px rgba(201, 168, 76, 0.5),
+    0 2px 8px rgba(0, 0, 0, 0.7);
+  margin: 4px 0 8px;
+  line-height: 1.4;
+}
+
+.door-families .amp-small {
+  font-family: var(--font-italic);
+  font-style: italic;
+  color: var(--gold-dark);           /* ← كان gold */
+  opacity: 0.9;
+  font-size: 1.1em;
+}
+
+/* الدعوة (Invite you...) */
+.door-invite {
+  font-family: var(--font-italic);
+  font-style: italic;
+  color: var(--gold-dark);           /* ← كان rgba فاتح */
+  font-size: clamp(12px, 3.2vw, 17px);
+  letter-spacing: 0.14em;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+  margin: 6px 0 2px;
+  line-height: 1.4;
+}
+
+/* أسماء العروسين */
 .door-names-hero {
   font-family: var(--font-display);
   font-weight: lighter;
-  color: var(--gold-light);
-  font-size: clamp(22px, 6.5vw, 48px);
+  color: var(--gold-dark);           /* ← كان gold-light */
+  font-size: clamp(22px, 6.5vw, 46px);
   letter-spacing: 0.06em;
   line-height: 1.2;
   text-shadow:
-    0 0 24px rgba(201, 168, 76, 0.7),
-    0 2px 10px rgba(0, 0, 0, 0.9);
-  margin: 8px 0;
+    0 0 18px rgba(201, 168, 76, 0.6),
+    0 2px 10px rgba(0, 0, 0, 0.7);
+  margin: 2px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .amp-hero {
-  color: var(--gold);
+  color: var(--gold-dark);           /* ← كان gold */
   font-family: var(--font-italic);
   font-style: italic;
-  opacity: 0.85;
+  opacity: 0.9;
+}
+
+/* نوع الحفل (Wedding Ceremony) */
+.door-ceremony {
+  font-family: var(--font-display);
+  font-size: clamp(11px, 3vw, 15px);
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold-dark);           /* ← كان gold-pale */
+  text-shadow:
+    0 0 10px rgba(201, 168, 76, 0.6),
+    0 1px 6px rgba(0, 0, 0, 0.7);
+  margin-top: 6px;
+  opacity: 0.95;
+  line-height: 1.4;
 }
 
 .door-subtitle {
@@ -1516,4 +1583,26 @@ html[lang="ar"] .contact-info {
 html[lang="ar"] .music-control-btn {
   right: auto;
   left: 25px;
+}
+
+.door-subtitle {
+  display: none;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 480px) {
+  .door-top-text {
+    top: 3%;
+    gap: 4px;
+  }
+  .door-families {
+    gap: 6px;
+    margin: 2px 0 6px;
+  }
+  .door-names-hero {
+    gap: 6px;
+  }
+  .door-ceremony {
+    letter-spacing: 0.28em;
+  }
 }

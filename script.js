@@ -726,7 +726,7 @@ function handleRSVP(event) {
 
 function bindWhatsAppButtons() {
   const groomBtn = document.getElementById("send-to-groom");
-  // const brideBtn = document.getElementById("send-to-bride");
+  const brideBtn = document.getElementById("send-to-bride");
   const copyBtn = document.getElementById("copy-message");
 
   if (groomBtn) {
