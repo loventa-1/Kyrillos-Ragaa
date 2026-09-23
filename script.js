@@ -9,10 +9,10 @@
    ────────────────────────────────────────────────────────────────── */
 const CONFIG = {
   // --- Wedding Info ---
-  groomName: "Kyrillos",
-  brideName: "Ragaa",
-  groomNameAr: "كيرلس",
-  brideNameAr: "رجاء",
+  groomName: "Michael",
+  brideName: "Meriam",
+  groomNameAr: "مايكل",
+  brideNameAr: "مريم",
   weddingDate: "October 24, 2026",
   weddingDateAr: "٢٤ أكتوبر ٢٠٢٦",
   weddingTime: "7:00 PM",
